@@ -1,0 +1,588 @@
+/* ==========================================================================
+   Design System & Variáveis
+   ========================================================================== */
+:root {
+  /* Cores Harmoniosas */
+  --color-bg-main: #ffffff;
+  --color-bg-subtle: #f8faf9;
+  --color-bg-card: #f1f5f3;
+  --color-border: #e2e8f0;
+  
+  --color-text-primary: #111827;     /* Cinza quase preto sofisticado */
+  --color-text-secondary: #4b5563;   /* Cinza médio elegante */
+  --color-text-muted: #9ca3af;
+  
+  --color-primary-green: #10b981;    /* Verde Esmeralda Moderno */
+  --color-primary-green-hover: #059669;
+  --color-dark-green: #064e3b;       /* Verde Escuro Elegante */
+  
+  /* Tipografia */
+  --font-main: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-logo:'Emblema One', system-ui;
+  
+  /* Transições e Efeitos */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+/* ==========================================================================
+   Reset CSS Moderno
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Previne transbordamento horizontal */
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-main);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   Componentes Globais: Botões
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   Header Estilos
+   ========================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 100;
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-circle {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-dark-green);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.35rem;
+  box-shadow: var(--shadow-sm);
+  user-select: none;
+  font-family: var(--font-logo);
+}
+
+.logo-text {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5px;
+  font-family: var(--font-logo);
+}
+
+.btn-header-download {
+  padding: 0.6rem 1.5rem;
+  background-color: var(--color-primary-green);
+  color: #ffffff;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.btn-header-download:hover {
+  background-color: var(--color-primary-green-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+}
+
+.btn-header-download:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Seção Hero
+   ========================================================================== */
+.hero-section {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: var(--color-bg-main);
+  position: relative;
+  width: 100%;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Previne quebras em layouts flexbox */
+}
+
+/* Coluna Esquerda: Headline sem exagero */
+.hero-left {
+  flex: 0 1 32%;
+}
+
+.hero-headline {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5px;
+}
+
+/* Coluna Central: Imagem principal do App em destaque */
+.hero-center {
+  flex: 0 1 36%;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-mockup {
+  max-width: 290px;
+  width: 100%;
+  border-radius: 38px;
+  /* Criação de borda simuladora de telefone */
+  box-shadow: 
+    0 25px 60px -15px rgba(0, 0, 0, 0.15), 
+    0 0 0 12px var(--color-text-primary),
+    0 0 0 13px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  background-color: #000000;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  /* Impede vazamento nas bordas arredondadas */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+.phone-mockup:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Coluna Direita: Lista de pontos-chave */
+.hero-right {
+  flex: 0 1 32%;
+  align-items: flex-end;
+}
+
+.feature-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 280px;
+}
+
+.bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background-color: var(--color-bg-subtle);
+  padding: 1.1rem 1.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.bullet-item:hover {
+  transform: translateX(-6px);
+  background-color: #ffffff;
+  border-color: rgba(16, 185, 129, 0.15);
+  box-shadow: var(--shadow-lg);
+}
+
+.bullet-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.bullet-text {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+/* ==========================================================================
+   Seção Funcionalidades (Alternância de Elementos)
+   ========================================================================== */
+.features-section {
+  padding: 8rem 2rem;
+  background-color: var(--color-bg-main);
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+}
+
+.features-container {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+/* Alternância elegante sem JS (Esquerda/Direita) */
+.feature-row:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+.feature-media {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.image-wrapper {
+  max-width: 270px;
+  width: 100%;
+  border-radius: 36px;
+  box-shadow: 
+    0 20px 45px -10px rgba(0, 0, 0, 0.1),
+    0 0 0 8px var(--color-text-primary);
+  overflow: hidden;
+  background-color: #000000;
+  transition: transform 0.5s ease;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+.image-wrapper:hover {
+  transform: scale(1.03);
+}
+
+.feature-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.feature-content {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.feature-tag {
+  align-self: flex-start;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  letter-spacing: 1.5px;
+  margin-bottom: 0.75rem;
+  background-color: rgba(16, 185, 129, 0.08);
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+}
+
+.feature-title {
+  font-size: 2.15rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.feature-desc {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Seção CTA
+   ========================================================================== */
+.cta-section {
+  padding: 8rem 2rem;
+  background: radial-gradient(circle at top, var(--color-bg-subtle) 0%, #ffffff 100%);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.cta-container {
+  max-width: 650px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.btn-cta-large {
+  padding: 1.1rem 3rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: var(--color-primary-green);
+  border-radius: 50px;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.25);
+}
+
+.btn-cta-large:hover {
+  background-color: var(--color-primary-green-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4);
+}
+
+.btn-cta-large:active {
+  transform: translateY(-1px);
+}
+
+.cta-text-highlight {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   Rodapé
+   ========================================================================== */
+.footer {
+  padding: 3rem 2rem;
+  background-color: var(--color-bg-main);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+/* ==========================================================================
+   Responsividade (CSS Media Queries)
+   ========================================================================== */
+
+/* Telas de Tablets e Computadores Pequenos */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 4rem;
+  }
+  
+  .hero-col {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: center !important;
+  }
+  
+  .hero-left, .hero-center, .hero-right {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: center !important;
+  }
+  
+  .hero-headline {
+    max-width: 600px;
+  }
+  
+  .feature-bullets {
+    align-items: center;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .bullet-item {
+    flex: 1 1 200px;
+    max-width: 250px;
+    justify-content: center;
+  }
+  
+  .bullet-item:hover {
+    transform: translateY(-4px);
+  }
+  
+  .feature-row {
+    flex-direction: column !important;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .feature-media, .feature-content {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: center !important;
+  }
+}
+
+/* Telas de Celulares */
+@media (max-width: 576px) {
+  html {
+    font-size: 15px;
+  }
+  
+  .header-container {
+    padding: 1rem;
+  }
+  
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+  
+  .hero-headline {
+    font-size: 1.95rem;
+  }
+  
+  .feature-bullets {
+    flex-direction: column;
+  }
+  
+  .bullet-item {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .features-section {
+    padding: 5rem 1rem;
+  }
+  
+  .features-container {
+    gap: 5rem;
+  }
+  
+  .feature-row {
+    gap: 2.5rem;
+  }
+  
+  .feature-title {
+    font-size: 1.8rem;
+  }
+  
+  .cta-section {
+    padding: 5rem 1.5rem;
+  }
+  
+  .cta-title {
+    font-size: 1.95rem;
+  }
+  
+  .btn-cta-large {
+    padding: 1rem 2.25rem;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* Ajustes Finais para Telas Ultra-Pequenas */
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 1.15rem;
+  }
+  .logo-circle {
+    width: 34px;
+    height: 34px;
+    font-size: 1.15rem;
+  }
+  .btn-header-download {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.85rem;
+  }
+}
