@@ -36,18 +36,6 @@ Este projeto foi construído utilizando apenas tecnologias web fundamentais, pri
 
 ---
 
-## 💻 Como Visualizar Localmente
+## 💻 Como Visualizar
 
-Como o projeto utiliza exclusivamente HTML e CSS puro, você pode visualizá-lo abrindo o arquivo `index.html` diretamente em seu navegador ou iniciando um servidor local simples na pasta do projeto:
-```bash
-python -m http.server 8000
-```
-
----
-
-## 🚀 Deploy no Vercel
-
-Este projeto está pronto para ser publicado no Vercel de forma simples e rápida:
-1. Conecte seu repositório Git ao painel da Vercel.
-2. Como se trata de um projeto estático em HTML/CSS puro, as configurações padrão do Vercel detectarão e farão o deploy automático sem a necessidade de comandos de compilação (build settings) adicionais.
-
+Este projeto está disponivel em: https://fitlife-taupe.vercel.app/
